@@ -1,4 +1,4 @@
-# Last updated: 8/5/2025, 12:32:48 PM
+# Last updated: 8/5/2025, 12:33:06 PM
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         n= len(nums)
