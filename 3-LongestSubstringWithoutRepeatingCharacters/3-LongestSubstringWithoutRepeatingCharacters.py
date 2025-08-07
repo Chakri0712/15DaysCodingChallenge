@@ -1,18 +1,15 @@
-# Last updated: 02/08/2025, 14:42:45
+# Last updated: 8/7/2025, 11:53:07 AM
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        left = 0
-        char_map = {}
-        max_len = 0
-        for right in range(len(s)):
-            char = s[right]
-
-            if char in char_map and char_map[char] >= left:
-                left = char_map[char] + 1
-
-            char_map[char] = right
-
-            max_len = max(max_len, right-left+1)
-
-        return max_len
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        n=len(nums)
+        low,high=0,n-1
+        while low <= high:
+            mid = low + (high-low) // 2
+            if target == nums[mid]:
+                return mid
+            if target < nums[mid]:
+                high = mid - 1
+            elif target > nums[mid]:
+                low = mid + 1
+        return low
         
